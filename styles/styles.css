@@ -1,0 +1,137 @@
+/* Reset de base pour uniformiser les styles entre les navigateurs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background: #000;
+    padding: 10px 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.logo {
+    width: 13vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* Centrer les éléments de navigation */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d1c8ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block; /* Permet au pseudo-élément de s'aligner correctement */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+/* Pseudo-élément pour le liseret */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px; /* Épaisseur du liseret */
+    background: #d1c8ff; /* Couleur du liseret */
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #d1c8ff;
+    /* Couleur au survol */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Largeur finale de 100% lors du survol */
+}
+
+/* Section principale */
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Centrer le contenu */
+    padding: 50px 20px;
+    background-image: url("../assets/bg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#home {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+main h1 {
+    font-size: 6vh;
+    /* Taille de la police pour le grand titre */
+    margin-bottom: 20px;
+    color: #BFCAFD;
+    font-weight: 500;
+}
+
+main p {
+    font-size: 4vh;
+    /* Taille de la police pour le sous-titre 'se marient' */
+    color: #BFCAFD;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+time {
+    display: block;
+    font-size: 4vh;
+    /* Taille de la police pour la date */
+    color: #d1c8ff;
+    margin-bottom: 40px;
+}
+
+/* Transition */
+.zoom-effect {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+.zoom-out {
+    transform: scale(2);
+    opacity: 0;
+}
