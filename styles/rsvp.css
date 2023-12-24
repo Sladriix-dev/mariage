@@ -163,6 +163,11 @@ input[type="submit"]:hover {
     font-size: 2vh;
 }
 
+input[disabled], label.disabled {
+    opacity: 0.5; /* Grise le contenu */
+    cursor: not-allowed; /* Affiche un curseur interdit */
+}
+
 
 /* Pied de page */
 footer {
@@ -179,4 +184,17 @@ footer p {
     font-size: 2vh;
     font-weight: 400;
     font-style: italic;
+}
+
+@media (max-width: 510px) {
+    .form-container {
+        width: 75%;
+        height: 95%;
+    }
+}
+
+@media (max-width: 405px) {
+    .btn-submit {
+        font-size: 1.5vh;
+    }
 }
