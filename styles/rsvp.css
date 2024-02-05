@@ -52,7 +52,8 @@ nav ul li a {
     font-weight: bold;
     transition: color 0.3s ease;
     position: relative;
-    display: inline-block; /* Permet au pseudo-élément de s'aligner correctement */
+    display: inline-block;
+    /* Permet au pseudo-élément de s'aligner correctement */
     text-decoration: none;
     font-weight: bold;
     font-size: 2vh;
@@ -63,8 +64,10 @@ nav ul li a::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px; /* Épaisseur du liseret */
-    background: #d1c8ff; /* Couleur du liseret */
+    height: 2px;
+    /* Épaisseur du liseret */
+    background: #d1c8ff;
+    /* Couleur du liseret */
     transition: width 0.3s ease-in-out;
     position: absolute;
     bottom: -5px;
@@ -77,7 +80,8 @@ nav ul li a:hover {
 }
 
 nav ul li a:hover::after {
-    width: 100%; /* Largeur finale de 100% lors du survol */
+    width: 100%;
+    /* Largeur finale de 100% lors du survol */
 }
 
 /* Section principale */
@@ -163,9 +167,61 @@ input[type="submit"]:hover {
     font-size: 2vh;
 }
 
-input[disabled], label.disabled {
-    opacity: 0.5; /* Grise le contenu */
-    cursor: not-allowed; /* Affiche un curseur interdit */
+input[disabled],
+label.disabled {
+    opacity: 0.5;
+    /* Grise le contenu */
+    cursor: not-allowed;
+    /* Affiche un curseur interdit */
+}
+
+textarea#commentaires {
+    height: 100px;
+}
+
+textarea#commentaires:focus {
+    border-color: #6f5682;
+    outline: none;
+}
+
+/* Envoie du Formulaire */
+
+.hidden {
+    display: none;
+}
+
+#confirmation-message {
+    display: none;
+    /* caché par défaut */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    z-index: 1000;
+    /* S'assure que le message apparaît au-dessus des autres éléments */
+}
+
+/* Animation pour faire apparaître le message */
+.show-confirmation {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 

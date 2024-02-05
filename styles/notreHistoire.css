@@ -52,7 +52,8 @@ nav ul li a {
     font-weight: bold;
     transition: color 0.3s ease;
     position: relative;
-    display: inline-block; /* Permet au pseudo-élément de s'aligner correctement */
+    display: inline-block;
+    /* Permet au pseudo-élément de s'aligner correctement */
     text-decoration: none;
     font-weight: bold;
     font-size: 2vh;
@@ -63,8 +64,10 @@ nav ul li a::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px; /* Épaisseur du liseret */
-    background: #d1c8ff; /* Couleur du liseret */
+    height: 2px;
+    /* Épaisseur du liseret */
+    background: #d1c8ff;
+    /* Couleur du liseret */
     transition: width 0.3s ease-in-out;
     position: absolute;
     bottom: -5px;
@@ -77,61 +80,8 @@ nav ul li a:hover {
 }
 
 nav ul li a:hover::after {
-    width: 100%; /* Largeur finale de 100% lors du survol */
-}
-
-/* Section principale */
-main {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-image: url("../assets/bg3.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.planning {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(1px);
-}
-
-.planning h1 {
-    font-size: 4vh;
-}
-
-.content {
-    height: 70%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content ul li {
-    list-style: none;
-    margin-bottom: 50px;
-}
-
-.content ul li p {
-    font-size: 2.5vh;
-    font-weight: 400;
-    text-align: center;
-}
-
-img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
+    /* Largeur finale de 100% lors du survol */
 }
 
 /* Pied de page */
@@ -149,18 +99,4 @@ footer p {
     font-size: 2vh;
     font-weight: 400;
     font-style: italic;
-}
-
-@media (max-width : 700px) {
-    .planning {
-        width: 100%;
-    }
-
-    main img {
-        display: none;
-    }
-
-    .content ul li p {
-        font-weight: 500;
-    }
 }
