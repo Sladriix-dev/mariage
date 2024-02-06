@@ -13,7 +13,12 @@
     <header>
         <nav>
             <a href="../index.html"><img src="../assets/logo.png" alt="logo mariage" class="logo"></a>
-            <ul>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="menu">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="./planning.html">Planning</a></li>
                 <li><a href="./notreHistoire.html">L'équipe</a></li>
@@ -45,8 +50,6 @@
                     <label for="non">Non</label>
                 </div>
 
-
-
                 <label for="invites">Nombre d'invités</label>
                 <input type="number" id="invites" name="invites" class="form-champ" placeholder="ex : 2">
 
@@ -61,7 +64,7 @@
         <div id="confirmation-message" class="hidden">
             <p>Merci pour votre réponse !</p>
         </div>
-        
+
 
 
     </main>
@@ -73,6 +76,8 @@
     </script>
 
     <script src="../scripts/fondu.js"></script>
+    <script src="../scripts/menu.js"></script>
+    <script src="../scripts/radio.js"></script>
     <script src="../scripts/sendForm.js"></script>
     <footer>
         <p>Océane & Maxime - 06.07.2024</p>

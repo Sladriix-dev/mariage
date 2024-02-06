@@ -77,6 +77,97 @@ nav ul li a:hover::after {
     width: 100%; /* Largeur finale de 100% lors du survol */
 }
 
+.menu-toggle {
+    display: none; /* Cache le bouton sur les grands écrans, visible sur les petits écrans via media query */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Ajustez au besoin */
+    position: relative;
+}
+
+/* Assurez-vous que les pseudo-éléments sont également masqués par défaut */
+.menu-toggle::before, .menu-toggle::after {
+    content: '';
+    display: none; /* Masque par défaut */
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: #d1c8ff; /* Couleur des lignes */
+}
+
+
+@media (max-width: 650px) {
+    .menu-toggle {
+        display: block; /* Affiche le bouton sur les petits écrans */
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin: 0 20px 0 0; /* Ajustez selon votre mise en page */
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 30px; /* Largeur des lignes */
+        height: 2px; /* Hauteur des lignes */
+        background-color: #d1c8ff; /* Couleur des lignes */
+        margin: 6px 0; /* Espacement entre les lignes */
+        transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Styles supplémentaires pour le menu-toggle */
+    .menu-toggle::before, .menu-toggle::after {
+        content: none; /* Assurez-vous que ces pseudo-éléments n'ajoutent pas de contenu supplémentaire */
+    }
+
+    nav ul {
+        position: fixed;
+        top: -100%; /* Commence hors de l'écran */
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+        height: 100vh; /* Utilise toute la hauteur de l'écran */
+        width: 100%; /* Utilise toute la largeur */
+        z-index: 99; /* S'assure que le menu est au-dessus des autres éléments */
+        opacity: 0.95; /* Légère transparence */
+        transition: top 0.5s ease; /* Animation de glissement */
+        backdrop-filter: blur(40px); /* Applique un flou à l'arrière-plan visible à travers le menu */
+    }
+
+    nav ul.active {
+        top: 8.5vh;
+        display: flex; /* Affiche le menu lorsque actif */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Espacement vertical pour les liens */
+    }
+
+    nav ul li a {
+        font-size: 4vh; /* Taille de police plus grande pour les liens dans le menu mobile */
+    }
+}
+
+
+
 /* Section principale */
 main {
     height: 100%;
@@ -107,6 +198,15 @@ main h1 {
     margin-bottom: 20px;
     color: #000;
     font-weight: 500;
+}
+
+@media (max-width: 550px) {
+    main h1 {
+        font-size: 4vh;
+    }
+    main p {
+        font-size: 3vh;
+    }
 }
 
 main p {
