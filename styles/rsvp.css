@@ -331,7 +331,7 @@ footer p {
     font-style: italic;
 }
 
-@media (max-width: 510px) {
+@media (max-width: 850px) {
     .form-container {
         width: 75%;
         height: 95%;
