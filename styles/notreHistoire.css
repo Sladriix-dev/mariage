@@ -7,8 +7,6 @@
 
 /* Styles généraux */
 body {
-    height: 85vh;
-    overflow: hidden;
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     line-height: 1.6;
@@ -83,6 +81,25 @@ nav ul li a:hover::after {
     width: 100%;
     /* Largeur finale de 100% lors du survol */
 }
+
+/* Content */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.responsive-image {
+    flex: 1 1 50%; /* Chaque image prendra 50% de l'espace disponible */
+    max-width: 50%; /* Limite la largeur de l'image à 50% de la largeur du conteneur */
+    height: auto; /* Permet de garder le ratio de l'image */
+}
+
+@media (max-width: 1156px) {
+    .responsive-image {
+        max-width: 100%;
+    }
+}
+
 
 /* Pied de page */
 footer {
