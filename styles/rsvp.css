@@ -141,7 +141,7 @@ nav ul li a:hover::after {
 
     nav ul {
         position: fixed;
-        top: -100%; /* Commence hors de l'écran */
+        top: -100vh; /* Commence hors de l'écran */
         left: 0;
         right: 0;
         display: flex;
