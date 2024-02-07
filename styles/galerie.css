@@ -7,9 +7,17 @@
 
 /* Styles généraux */
 body {
+    height: 85vh;
+    overflow: hidden;
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     line-height: 1.6;
+    opacity: 1;
+    transition: opacity ease-in-out;
+}
+
+h1 {
+    text-align: center;
 }
 
 /* En-tête */
@@ -18,6 +26,7 @@ header {
     padding: 10px 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     position: relative;
+    z-index: 5;
 }
 
 .logo {
@@ -129,12 +138,12 @@ nav ul li a:hover::after {
 
     /* Styles supplémentaires pour le menu-toggle */
     .menu-toggle::before, .menu-toggle::after {
-        content: none;
+        content: none; /* Assurez-vous que ces pseudo-éléments n'ajoutent pas de contenu supplémentaire */
     }
 
     nav ul {
         position: fixed;
-        top: -100vh; /* Commence hors de l'écran */
+        top: -100%; /* Commence hors de l'écran */
         left: 0;
         right: 0;
         display: flex;
@@ -143,6 +152,8 @@ nav ul li a:hover::after {
         align-items: center;
         background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
         height: 100vh; /* Utilise toute la hauteur de l'écran */
+        width: 100%; /* Utilise toute la largeur */
+        z-index: 99; /* S'assure que le menu est au-dessus des autres éléments */
         opacity: 0.95; /* Légère transparence */
         transition: top 0.5s ease; /* Animation de glissement */
         backdrop-filter: blur(40px); /* Applique un flou à l'arrière-plan visible à travers le menu */
@@ -162,72 +173,69 @@ nav ul li a:hover::after {
     }
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
+.gallery-item {
+    position: relative;
+}
 
-/* Section principale */
-main {
-    height: 92vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.photo-description {
     text-align: center;
-    /* Centrer le contenu */
-    padding: 50px 20px;
-    background-image: url("../assets/bg3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding: 5px;
 }
 
-#home {
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: end;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-bottom: 30px;
 }
 
-main h1 {
-    font-size: 6vh;
-    /* Taille de la police pour le grand titre */
-    margin-bottom: 20px;
-    color: #000;
-    font-weight: 500;
+#lightbox.active {
+    display: flex;
 }
 
-@media (max-width: 550px) {
-    main h1 {
-        font-size: 4vh;
-    }
-    main p {
-        font-size: 3vh;
-    }
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
 }
 
-main p {
-    font-size: 4vh;
-    /* Taille de la police pour le sous-titre 'se marient' */
-    color: #000;
+
+/* Pied de page */
+footer {
+    background: rgb(29, 29, 29);
+    color: #d1c8fd;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 5;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 2vh;
     font-weight: 400;
-    margin-bottom: 50px;
-}
-
-time {
-    display: block;
-    font-size: 5vh;
-    /* Taille de la police pour la date */
-    color: #d1c8ff;
-    margin-bottom: 40px;
-}
-
-/* Transition */
-.zoom-effect {
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 1;
-}
-
-.zoom-out {
-    transform: scale(2);
-    opacity: 0;
+    font-style: italic;
 }

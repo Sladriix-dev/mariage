@@ -119,7 +119,7 @@ nav ul li a:hover::after {
         height: 2px; /* Hauteur des lignes */
         background-color: #d1c8ff; /* Couleur des lignes */
         margin: 6px 0; /* Espacement entre les lignes */
-        transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+        transition: transform 1s ease, opacity 1s ease, background-color 1s ease;
     }
 
     .menu-toggle.active span:nth-child(1) {
@@ -141,7 +141,7 @@ nav ul li a:hover::after {
 
     nav ul {
         position: fixed;
-        top: -100%; /* Commence hors de l'écran */
+        top: -100vh; /* Commence hors de l'écran */
         left: 0;
         right: 0;
         display: flex;
@@ -151,7 +151,6 @@ nav ul li a:hover::after {
         background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
         height: 100vh; /* Utilise toute la hauteur de l'écran */
         width: 100%; /* Utilise toute la largeur */
-        z-index: 99; /* S'assure que le menu est au-dessus des autres éléments */
         opacity: 0.95; /* Légère transparence */
         transition: top 0.5s ease; /* Animation de glissement */
         backdrop-filter: blur(40px); /* Applique un flou à l'arrière-plan visible à travers le menu */
