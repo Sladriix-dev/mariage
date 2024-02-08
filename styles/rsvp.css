@@ -271,46 +271,38 @@ textarea#commentaires:focus {
     outline: none;
 }
 
-/* Envoie du Formulaire */
-
-.hidden {
-    display: none;
-}
-
+/* Confirmation envoie du formulaire */
 #confirmation-message {
     display: none;
-    /* caché par défaut */
     position: fixed;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9); /* Léger zoom arrière pour l'effet */
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
     background-color: white;
-    text-align: center;
-    z-index: 1000;
-    /* S'assure que le message apparaît au-dessus des autres éléments */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition pour l'opacité et la transformation */
+    z-index: 100; /* Assurez-vous qu'il est au-dessus des autres éléments */
 }
 
-/* Animation pour faire apparaître le message */
-.show-confirmation {
-    display: block;
-    animation: fadeIn 1s;
+#confirmation-message p {
+    font-size: 3vh;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+/* Classe pour afficher la pop-up avec animation */
+#confirmation-message.show {
+    display: flex;
+    height: 75%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Retour à la taille normale pour l'effet */
 }
-
 
 /* Pied de page */
 footer {
